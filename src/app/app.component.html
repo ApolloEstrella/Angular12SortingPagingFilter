@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <span class="fill-remaining-space"></span>
+
+  <div fxLayout="row" fxHide fxShow.gt-sm>
+
+    <button mat-button routerLink="shipping" (click)="openDialog()">
+      Shipping
+    </button>
+
+    <button mat-button routerLink="register" (click)="openDialog2()">
+      Register
+    </button>
+
+    <button mat-button routerLink="invoice" (click)="openDialog3()">Invoice</button>
+    <mat-menu #menu="matMenu" style="display: none;">
+    </mat-menu>
+    <button mat-button routerLink="test">Test</button>
+  </div>
+
+</mat-toolbar>
+
+<mat-menu x-position="before" #menu>
+  <button mat-button routerLink="shipping">Shipping</button>
+  <button mat-menu-item routerLink="register">Register</button>
+  <button mat-menu-item routerLink="login">Log In</button>
+</mat-menu>
+
+<router-outlet></router-outlet>
